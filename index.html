@@ -169,15 +169,13 @@
     <div id="chat-window" class="chat-window"></div>
 
     <form id="chat-form" class="input-area">
-        <input type="text" id="user-input" placeholder="Gõ 'Ninh Bình có gì'..." autocomplete="off">
+        <input type="text" id="user-input" placeholder="Hãy gõ 'Bắt đầu...' để mình có thể giúp bạn!" autocomplete="off">
         <button type="submit">Gửi</button>
     </form>
 </div>
 
 <script>
-    // ============================================================
-    // DỮ LIỆU CHI TIẾT (FULL 5 MỤC)
-    // ============================================================
+    
     const DETAILS = {
         // ================= MỤC 1: 19 ĐIỂM DU LỊCH =================
         "CO_DO_HOA_LU": `🏯 **1. CỐ ĐÔ HOA LƯ**\n- Cố đô Hoa Lư (phường Tây Hoa Lư) là quần thể di tích lịch sử - văn hóa quốc gia đặc biệt, thuộc Quần thể Di sản thế giới Tràng An. Với diện tích khoảng 300ha, được bao bọc bởi núi đá hùng vĩ, nơi đây gắn với sự kiện Đinh Bộ Lĩnh dẹp loạn 12 sứ quân, lập nên Nhà nước Đại Cồ Việt - vương triều phong kiến tập quyền đầu tiên của Việt Nam. Hoa Lư gắn liền với các triều Đinh, Tiền Lê và khởi đầu triều Lý, hiện còn lưu giữ nhiều di tích giá trị như đền thờ vua Đinh - vua Lê, lăng tẩm, chùa Nhất Trụ, đền Vực Vông, cùng tường thành thiên tạo và cảnh quan kỳ thú, được mệnh danh là “Kinh đô đá” trường tồn cùng thời gian..`,
@@ -611,7 +609,7 @@ Lương Thế Vinh được gọi là "Trạng Lường" vì ông có tài năng
         let msg = input.toLowerCase().trim();
 
         // --- CẤP 1: MENU CHÍNH ---
-        if (msg.includes("ninh bình") || msg.includes("có gì") || msg.includes("danh sách")) {
+        if (msg.includes("bắt đầu") || msg.includes("có gì") || msg.includes("danh sách")) {
             return `🌿 **NINH BÌNH CÓ NHỮNG GÌ?**
 
 1️⃣. Khu, điểm du lịch tiêu biểu 
@@ -627,19 +625,19 @@ Lương Thế Vinh được gọi là "Trạng Lường" vì ông có tài năng
 
         // --- CẤP 2: LIỆT KÊ DANH SÁCH ---
         if (msg === "1" || msg.includes("khu du lịch")) {
-            return `🗺️ **1. DANH SÁCH 19 ĐIỂM DU LỊCH:**\n1. Cố đô Hoa Lư\n2. Cồn nổi Kim Sơn\n3. Di tích đền Trần chùa Phổ Minh\n4. Điểm du lịch thạc bích thung nắng\n5. Động thiên hà\n6. Nhà thờ Phát Diệm\n7. Đầm Vân Long\n8. Vườn chim Thung Nham\n9. Hang Múa\n10. Tràng AN\n11. Biển thịnh long\n12. vườn quốc gia Cúc Phương\n13. Vườn quốc gia Xuân Thủy\n14. Chùa Bái Đính\n15. Biển Quất Lâm\n16. Ngũ động Thi Sơn\n17.Tam Cốc Bích Động\n18. Chùa Tam Chúc\n19. Bát Cảnh Sơn\n👉 *Gõ tên địa điểm để xem chi tiết.*`;
+            return `🗺️ **1. DANH SÁCH 19 ĐIỂM DU LỊCH:**\n1. Hoa Lư\n2. Cồn nổi Kim Sơn\n3. Di tích đền Trần chùa Phổ Minh\n4. Điểm du lịch thạc bích Thung Nắng\n5. Động Thiên Hà\n6. Nhà thờ Phát Diệm\n7. Đầm Vân Long\n8. Vườn chim Thung Nham\n9. Hang Múa\n10. Tràng An\n11. Biển Thịnh Long\n12. Vườn quốc gia Cúc Phương\n13. Vườn quốc gia Xuân Thủy\n14. Chùa Bái Đính\n15. Biển Quất Lâm\n16. Ngũ động Thi Sơn\n17.Tam Cốc Bích Động\n18. Chùa Tam Chúc\n19. Bát Cảnh Sơn\n👉 *Gõ tên địa điểm để xem chi tiết.*`;
         }
         if (msg === "2" || msg.includes("di tích")) {
-            return `🏯 **2. DANH SÁCH 24 DI TÍCH LỊCH SỬ:**\n1. Cầu Ngói\n2. Chùa cổ lễ\n3. Chùa Lương\n4. Cố đô Hoa Lư\n5. Cột cờ Nam Định\n6. Đền trúc Ngũ Động Thi Sơn\n7. Lạt Sơn\n8. Địa tạng Phi Lai Tự\n9. Chùa Bái Đính\n10. Nhà thờ đá Phát Diệm\n11. Vương cung thánh đường Phú Nhai\n12. Núi non nước\n13. Vương cung thánh đường Sở Kiện\n14. Phố cổ Thành Nam\n15. Chùa Bà Đanh\n16. Đền Xám\n17. Đền Vĩnh Trụ\n18. Chùa Long Đọi Sơn\n19. Đền Lảnh Giang\n20. Từ đường Nguyễn Khuyến\n21. Nhà thờ Khoái Đồng\n22. Phủ Dầy\n23. Đền Trần (Nam Định)\n24. Chùa Keo Hành Thiện\n👉 *Gõ tên di tích để xem chi tiết.*`;
+            return `🏯 **2. DANH SÁCH 24 DI TÍCH LỊCH SỬ:**\n1. Cầu Ngói\n2. Chùa Cổ Lễ\n3. Chùa Lương\n4. Cố đô Hoa Lư\n5. Cột cờ Nam Định\n6. Đền trúc Ngũ Động Thi Sơn\n7. Lạt Sơn\n8. Địa tạng Phi Lai Tự\n9. Chùa Bái Đính\n10. Nhà thờ đá Phát Diệm\n11. Vương cung thánh đường Phú Nhai\n12. Núi Non Nước\n13. Vương cung thánh đường Sở Kiện\n14. Phố cổ Thành Nam\n15. Chùa Bà Đanh\n16. Đền Xám\n17. Đền Vĩnh Trụ\n18. Chùa Long Đọi Sơn\n19. Đền Lảnh Giang\n20. Từ đường Nguyễn Khuyến\n21. Nhà thờ Khoái Đồng\n22. Phủ Dầy\n23. Đền Trần (Nam Định)\n24. Chùa Keo Hành Thiện\n👉 *Gõ tên di tích để xem chi tiết.*`;
         }
         if (msg === "3" || msg.includes("làng nghề")) {
             return `🛠️ **3. DANH SÁCH 26 LÀNG NGHỀ:**\n1. Đá Ninh Vân\n2. Thêu Văn Lâm\n3. Cói Kim Sơn\n4. Gốm Bồ Bát\n5. Mộc Phúc Lộc\n6. Trống Đọi Tam\n7. Mây tre Ngọc Động\n8. Thêu Thanh Hà\n9. Lụa Nha Xá\n10. Sừng Đô Hai\n11. Kèn Hải Minh\n12. Đúc đồng Tống Xá\n13. Đan cói Đồng Nam\n14. Chạm khắc gỗ la Xuyên\n15.  Đúc đồng Kiên lao\n16. Mộc Phúc Lộc\n17.  Sơn mài Cát Đằng\n18.  Ươm tơ Cổ Chất và dệt Cự Trữ\n19. Trồng hoa cây cảnh Vị khê\n20. Hoa Phù Vân\n21. Đan nón Nghĩa Châu\n22. Làng nghề gốm Gia Thủy\n23. Gốm Quyết Thành\n24. Nước mắm Sa Châu\n25. Phở\n26. Múa rối nước làng Rạch\n👉 *Gõ tên làng nghề để xem chi tiết.*`;
         }
-        if (msg === "4" || msg.includes("lễ hội")) {
-            return `🎉 **4. DANH SÁCH 16 LỄ HỘI:**\n1.  Hoa Lư\n2. Tràng An\n3.  Đền Trần (NB)\n4.  Bái Đính\n5.  chùa Bà Đanh\n6.  Đền Thánh Nguyễn\n7.  Tịch điền\n8.  Chùa Long Đọi Sơn\n9.  Liễu Đôi\n10. Lảnh Giang\n11. Trần Thương\n12. chùa Keo\n13. Tam Trúc\n14. Khai ấn Đền Trần\n15. Phủ Dầy\n16. Hội chợ Viềng Xuân\n👉 *Gõ tên lễ hội để xem chi tiết.*`;
+        if (msg === "4" ) {
+            return `🎉 **4. DANH SÁCH 16 LỄ HỘI:**\n1. Lễ hội Hoa Lư\n2. Tràng An\n3.  Đền Trần (NB)\n4.  Bái Đính\n5.  chùa Bà Đanh\n6.  Đền Thánh Nguyễn\n7.  Tịch điền\n8.  Chùa Long Đọi Sơn\n9.  Liễu Đôi\n10. Lảnh Giang\n11. Trần Thương\n12. Chùa Keo\n13. Tam Trúc\n14. Khai ấn Đền Trần\n15. Phủ Dầy\n16. Hội chợ Viềng Xuân\n👉 *Gõ tên lễ hội để xem chi tiết.*`;
         }
         if (msg === "5" || msg.includes("nghệ thuật")) {
-            return `🎭 **5. DANH SÁCH 4 LOẠI HÌNH NGHỆ THUẬT:**\n1. Hát Ca Trù\n2. Hát Xẩm\n3. Hát trống quân liêm thuận\n4. Hát lải lèn\n👉 *Gõ tên loại hình để xem chi tiết.*`;
+            return `🎭 **5. DANH SÁCH 4 LOẠI HÌNH NGHỆ THUẬT:**\n1. Hát ca trù\n2. Hát xẩm\n3. Hát trống quân Liêm Thuận\n4. Hát Lải Lèn\n👉 *Gõ tên loại hình để xem chi tiết.*`;
         }
         if (msg === "6" || msg.includes("ẩm thực")) {
             return `🍲 **6. DANH SÁCH 12 MÓN ẨM THỰC ĐẶC SẮC:**\n1. Bánh đa cá rô\n2. Báng đa nem làng Chều\n3. Bánh nhãn Hải Hậu\n4. Dê tái chanh Ninh Bình\n5. Rượu Kim Sơn\n6. Bánh cuốn Phủ Lý\n7. Cá kho Nhân Hậu\n8. Chuối Ngự Đại Hoàng\n9. Kẹo Sìu Châu\n10. Phở bò Nam Định\n11. Nem dê\n12. Nem nắm Giao Thủy\n👉 *Gõ tên món ăn để xem chi tiết.*`;
@@ -650,7 +648,7 @@ Lương Thế Vinh được gọi là "Trạng Lường" vì ông có tài năng
 
         // --- CẤP 3: NỘI DUNG CHI TIẾT (MAP KEYWORD) ---
         // Du lịch (19)
-        if (msg.includes("cố đô") ) return DETAILS.CO_DO_HOA_LU;
+        if (msg.includes("hoa lư") ) return DETAILS.CO_DO_HOA_LU;
         if (msg.includes("cồn nổi kim sơn") ) return DETAILS.CON_NOI;
         if (msg.includes("đền trần chùa phổ minh")) return DETAILS.DI_TICH_DEN_TRAN_CHUA_PHO_MINH;
         if (msg.includes("thung nắng")) return DETAILS.DIEM_DU_LICH_THACH_BICH_THUNG_NANG;
@@ -674,7 +672,7 @@ Lương Thế Vinh được gọi là "Trạng Lường" vì ông có tài năng
         if (msg.includes("cầu ngói") ) return DETAILS.DEN_DINH;
         if (msg.includes("chùa cổ lễ") ) return DETAILS.DEN_LE;
         if (msg.includes("chùa lương")) return DETAILS.LANG_DINH;
-        if (msg.includes("cố đô hoa lư")) return DETAILS.LANG_LE;
+        if (msg.includes("cố đô")) return DETAILS.LANG_LE;
         if (msg.includes("cột cờ nam định") ) return DETAILS.COT_KINH;
         if (msg.includes("đền trúc  ")) return DETAILS.DEN_TRUC_NGU_DONG_THI_SON;
         if (msg.includes("lạt sơn") ) return DETAILS.PHU_KHONG;
@@ -731,13 +729,13 @@ Lương Thế Vinh được gọi là "Trạng Lường" vì ông có tài năng
 
 
         // Lễ hội (16)
-        if (msg.includes("hoa lư")) return DETAILS.HOA_LU_FEST;
+        if (msg.includes(" lễ hội hoa lư ")) return DETAILS.HOA_LU_FEST;
         if (msg.includes(" tràng an")) return DETAILS.TRANG_AN_FEST;
         if (msg.includes(" đền trần") ) return DETAILS.DEN_TRAN_NB_FEST;
         if (msg.includes(" chùa bái đính")) return DETAILS.BAI_DINH_FEST;
         if (msg.includes("chùa bà đanh")) return DETAILS.THAI_VI_FEST;
         if (msg.includes("thánh nguyễn")) return DETAILS.THANH_NGUYEN_FEST;
-    
+
         if (msg.includes("tịch điền")) return DETAILS.TICH_DIEN_FEST;
         if (msg.includes(" chùa long đọi sơn")) return DETAILS.LONG_DOI_SON_FEST;
         if (msg.includes("liễu đôi")) return DETAILS.LIEU_DOI_FEST;
@@ -781,7 +779,7 @@ Lương Thế Vinh được gọi là "Trạng Lường" vì ông có tài năng
 
 
         // Mặc định
-        if (msg.includes("chào")) return "Xin chào! Gõ **'Ninh Bình có gì'** để bắt đầu.";
+        if (msg.includes("chào")) return "Xin chào! Gõ **'Bắt đầu'** để bắt đầu.";
         return `Mình chưa hiểu rõ. 💡 Hãy hỏi lại để mình trả lời nhé!`;
     }
 
